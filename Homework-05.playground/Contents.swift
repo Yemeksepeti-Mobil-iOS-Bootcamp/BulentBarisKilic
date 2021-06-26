@@ -11,7 +11,7 @@ var primeNumberCandidates: [Int] = []
 var primeNumbers: [Int] = []
 
 //Finds divider numbers of the number.
-for i in 2..<number/2 {
+for i in 2..<Int(sqrt(Double(number))) {
     if(number%i == 0) {
         primeNumberCandidates.append(i)
     }
