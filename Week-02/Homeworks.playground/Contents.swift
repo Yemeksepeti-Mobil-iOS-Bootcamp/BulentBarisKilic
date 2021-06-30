@@ -1,5 +1,7 @@
 import UIKit
 
+//--------------------------------------------------------------------------------------------------------------------
+
 /**
  https://projecteuler.net/
  
@@ -24,6 +26,8 @@ for i in 1..<101 {
 let result = Int(pow(Double(sum),Double(2))) - sumOfTheSquares
 
 print("Difference between the sum of the squares of the first one hundred natural numbers and the square of the sum is \(result)")
+
+//--------------------------------------------------------------------------------------------------------------------
 
 /**
  By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
@@ -73,3 +77,34 @@ for i in 1... {
 }
 
 print("10 001st prime number: \(primeNumbers[10001] as Any)")
+
+//--------------------------------------------------------------------------------------------------------------------
+
+// MARK:- İki parametreli ve FARKLI tipli bir generic örneği yapınız... (T, U) ???
+
+class Person {
+    var firstName: String?
+    var lastName: String?
+    
+    init(firstName: String, lastName: String) {
+        self.firstName = firstName
+        self.lastName = lastName
+    }
+}
+
+class Car {
+    var color: String?
+    
+    init(color: String) {
+        self.color = color
+    }
+}
+
+func getCar<T: Person, U: Car>(person: T, car: U) -> String {
+    return "\(person.firstName ?? "") wants to buy \(car.color ?? "") car."
+}
+
+print(getCar(person: Person.init(firstName: "Barış", lastName: "Kılıç"), car: Car.init(color: "Gray")))
+
+//--------------------------------------------------------------------------------------------------------------------
+
