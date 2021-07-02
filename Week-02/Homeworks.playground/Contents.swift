@@ -108,3 +108,19 @@ print(getCar(person: Person.init(firstName: "Barış", lastName: "Kılıç"), ca
 
 //--------------------------------------------------------------------------------------------------------------------
 
+//MARK: -Girilen bir sayının asal olup olmadığını bulan bir extension:
+
+extension Int {
+    func isPrime() -> Bool {
+        if self == 2 {
+            return true
+        }else {
+            for i in 2...Int(sqrt(Double(self))) {
+                if self % i == 0 {
+                    return false
+                }
+            }
+            return true
+        }
+    }
+}
